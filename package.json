@@ -55,10 +55,6 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "hasky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
+
 }
