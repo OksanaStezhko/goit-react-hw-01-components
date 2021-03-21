@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-const kk;
+const kdk;
 ReactDOM.render(
   <React.StrictMode>
     <App />
