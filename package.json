@@ -19,8 +19,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "precommit": "lint-staged"
+    "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "src/**/*.{json,css,scss,md}": ["prettier --write"],
-     "src/**/*.{js,jsx,ts,tsx}": ["prettier --write", "eslint --fix"]
+     "src/**/*.{js, jsx,ts,tsx}": ["prettier --write", "eslint --fix"]
 },
 "hasky": {
   "hooks": {
