@@ -1,19 +1,18 @@
 import user from './user.json';
+import statisticalData from './statistical-data.json';
+// import friends from './friends.json';
 import React from 'react';
-import Description from './components/Description';
-import StatsList from './components/StatsList';
+
+import Statistics from './components/Statistics/Statistics';
+// import FriendList from './components/FriendList/FriendList';
+import Profile from './components/Profile/Profile';
 
 function App() {
   return (
-    <div class="profile">
-      <Description
-        avatar={user.avatar}
-        name={user.name}
-        tag={user.tag}
-        location={user.location}
-      ></Description>
-      <StatsList stats={user.stats}></StatsList>
-    </div>
+    <>
+      <Profile user={user}></Profile>
+      <Statistics title="Upload stats" stats={statisticalData}></Statistics>;
+    </>
   );
 }
 
