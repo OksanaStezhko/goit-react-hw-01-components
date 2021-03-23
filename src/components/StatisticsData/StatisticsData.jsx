@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import style from './StatisticsData.module.css';
 
 const StatisticsData = ({ label, percentage }) => (
-  <>
+  <li class="item">
     <span className={style.label}>{label}</span>
     <span className={style.percentage}>{percentage}%</span>
-  </>
+  </li>
 );
 
 StatisticsData.propTypes = {
