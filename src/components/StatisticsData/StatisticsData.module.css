@@ -1,0 +1,16 @@
+.item {
+  display: block;
+  background-color: red;
+}
+
+.label {
+  composes: item;
+  display: block;
+  font-size: 14px;
+}
+
+.percentage {
+  composes: item;
+  display: block;
+  font-size: 20px;
+}

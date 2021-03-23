@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Profile user={user}></Profile>
-      <Statistics title="Upload stats" stats={statisticalData}></Statistics>;
+      <Statistics title="Upload stats" stats={statisticalData}></Statistics>
     </>
   );
 }
