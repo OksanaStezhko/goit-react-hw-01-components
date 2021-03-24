@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StatisticsData from '../StatisticsData/StatisticsData';
+import FriendItem from '../FriendItem/FriendItem';
+import style from './FriendList.module.css';
 
-const StatisticsList = ({ statisticsList }) => (
-  <ul className="stat-list">
-    {statisticsList.map(({ id, label, percentage }) => (
-      <li className="item" key={id}>
-        <StatisticsData label={label} percentage={percentage}></StatisticsData>
-      </li>
+const FriendList = ({ friends }) => (
+  <ul className={style.list}>
+    {friends.map(({ id, ...friendInfo }) => (
+      <FriendItem key={id} friendInfo={friendInfo} />
     ))}
   </ul>
 );
 
-StatisticsList.propTypes = {
-  statisticsList: PropTypes.arrayOf(
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };
 
-export default StatisticsList;
+export default FriendList;

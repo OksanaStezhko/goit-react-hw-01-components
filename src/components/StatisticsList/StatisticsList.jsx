@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StatisticsData from '../StatisticsData/StatisticsData';
+import StatisticsItem from '../StatisticsItem/StatisticsItem';
 import style from './StatisticsList.module.css';
 
 const StatisticsList = ({ statisticsList }) => (
   <ul className={style.list}>
     {statisticsList.map(({ id, label, percentage }) => (
-      <StatisticsData key={id} label={label} percentage={percentage} />
+      <StatisticsItem key={id} label={label} percentage={percentage} />
     ))}
   </ul>
 );

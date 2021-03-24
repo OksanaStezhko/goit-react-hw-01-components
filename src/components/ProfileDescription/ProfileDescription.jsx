@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from './ProfileDescription.module.css';
+import defaultAvatar from '../../defaultAvatar.svg';
 
 const Description = ({ avatar, name, tag, location }) => (
   <div className={style.description}>
@@ -12,7 +13,7 @@ const Description = ({ avatar, name, tag, location }) => (
 );
 
 Description.defaultProps = {
-  avatar: 'https://www.flaticon.com/svg/static/icons/svg/3784/3784184.svg',
+  avatar: defaultAvatar,
 };
 
 Description.propTypes = {
