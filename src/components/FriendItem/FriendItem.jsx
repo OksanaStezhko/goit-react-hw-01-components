@@ -8,7 +8,7 @@ const FriendItem = ({ friendInfo: { avatar, name, isOnline } }) => (
     <span className={isOnline ? style.isOnline : style.isOffline}>
       {isOnline}
     </span>
-    <img className={style.avatar} src={avatar} alt="" width="48" />
+    <img className={style.avatar} src={avatar} alt="Аватар" width="48" />
     <p className={style.name}>{name}</p>
   </li>
 );
