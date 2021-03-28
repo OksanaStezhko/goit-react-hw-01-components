@@ -9,8 +9,6 @@ const ProfileStatsItem = ({ label, quantity }) => (
   </li>
 );
 
-export default ProfileStatsItem;
-
 ProfileStatsItem.defaultProps = {
   quantity: 0,
 };
@@ -19,3 +17,5 @@ ProfileStatsItem.prototype = {
   label: PropTypes.string.isRequired,
   quantity: PropTypes.number,
 };
+
+export default ProfileStatsItem;
