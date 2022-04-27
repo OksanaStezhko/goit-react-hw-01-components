@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import defaultAvatar from '../../defaultAvatar.svg';
 import style from './FriendItem.module.css';
+import { IFriend } from '../Interface/friend.interface';
 
-const FriendItem = ({ friendInfo: { avatar, name, isOnline } }) => (
+interface Props {
+  friend: IFriend;
+}
+
+const FriendItem = ({
+  friend: { avatar = defaultAvatar, name, isOnline },
+}: Props) => (
   <li className={style.item}>
     <span className={isOnline ? style.isOnline : style.isOffline}>
       {isOnline}
@@ -12,15 +18,5 @@ const FriendItem = ({ friendInfo: { avatar, name, isOnline } }) => (
     <p className={style.name}>{name}</p>
   </li>
 );
-
-FriendItem.defaultProps = {
-  avatar: defaultAvatar,
-};
-
-FriendItem.prototype = {
-  avatar: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-};
 
 export default FriendItem;

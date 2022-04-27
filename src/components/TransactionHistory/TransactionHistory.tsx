@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Transation from '../Transaction/Transaction';
 import style from './TransactionHistory.module.css';
+import { ITrans } from '../Interface/trans.interface';
 
-const TransactionHistory = ({ items }) => (
+interface Props {
+  items: ITrans[];
+}
+
+const TransactionHistory = ({ items }: Props) => (
   <table className={style.table}>
     <thead>
       <tr>
@@ -14,19 +18,11 @@ const TransactionHistory = ({ items }) => (
     </thead>
 
     <tbody>
-      {items.map(({ id, ...transactionInfo }) => (
-        <Transation key={id} transactionInfo={transactionInfo} />
+      {items.map(item => (
+        <Transation key={item.id} transactionInfo={item} />
       ))}
     </tbody>
   </table>
 );
-
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-};
 
 export default TransactionHistory;

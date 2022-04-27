@@ -1,9 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import style from './ProfileDescription.module.css';
 import defaultAvatar from '../../defaultAvatar.svg';
+import { IUser } from '../Interface/user.interface';
+import style from './ProfileDescription.module.css';
 
-const Description = ({ avatar, name, tag, location }) => (
+interface Props {
+  user: IUser;
+}
+
+const Description = ({
+  user: { avatar = defaultAvatar, name, tag, location },
+}: Props) => (
   <div className={style.description}>
     <img className={style.avatar} src={avatar} alt="Аватар пользователя" />
     <p className={style.name}>{name}</p>
@@ -11,16 +17,5 @@ const Description = ({ avatar, name, tag, location }) => (
     <p className={style.location}>{location}</p>
   </div>
 );
-
-Description.defaultProps = {
-  avatar: defaultAvatar,
-};
-
-Description.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-};
 
 export default Description;
